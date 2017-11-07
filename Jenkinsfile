@@ -2,7 +2,7 @@ node('master'){
    stage 'Checkout'
 	    checkout scm
   stage 'Test'
-  def nodeHome = tool name: 'node-5.10.1'
+  def nodeHome = tool name: 'node-1.2.4'
   sh "${nodeHome}/bin/node -v"
   stage 'Cleanup'
       sh 'rm node_modules -rf'
