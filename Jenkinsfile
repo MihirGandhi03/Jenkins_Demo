@@ -2,8 +2,8 @@ node('master'){
    stage 'Checkout'
 	    checkout scm
   stage 'Test'
-      sh 'node -v'
-      sh 'npm install' 
+      node -v
+      npm install
   stage 'Cleanup'
       sh 'rm node_modules -rf'
       mail (to: 'mihir.gandhi@infostretch.com',
