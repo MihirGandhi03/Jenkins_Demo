@@ -7,7 +7,6 @@ node('master'){
     bat "\"${nodeHome}\"\\npm -v"
     bat "\"${nodeHome}\"\\npm install"
   stage 'Cleanup'
-    def nodeHome = tool 'NodeJS1.2.4'
     bat "\"${nodeHome}\"\\rm node_modules -rf"
     mail (to: 'mihir.gandhi@infostretch.com',
                 subject: 'Project Build Successful',
