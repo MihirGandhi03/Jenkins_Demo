@@ -7,7 +7,7 @@ node('master'){
     bat "\"${nodeHome}\"\\npm -v"
     bat "\"${nodeHome}\"\\npm install --scripts-prepend-node-path"
   stage 'Cleanup'
-    bat "rmdir -r node_modules"
+    bat "rd -r node_modules"
     mail (to: 'mihirgandhi03@yahoo.com',
                 subject: 'Project Build Successful',
                 body: 'project build successful');             
