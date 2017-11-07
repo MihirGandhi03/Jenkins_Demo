@@ -6,7 +6,7 @@ node('master'){
     bat "\"${nodeHome}\"\\node.exe -v"
     bat "\"${nodeHome}\"\\npm -v"
     bat "\"${nodeHome}\"\\npm install --scripts-prepend-node-path"
-    bat "\"${nodeHome}\"\\npm build --scripts-prepend-node-path"
+    bat "npm build"
   stage 'Cleanup'
     //bat "rd node_modules /s /q"
     mail (to: 'mihirgandhi03@yahoo.com',
