@@ -7,7 +7,7 @@ node('master'){
       sh 'npm test'
   stage 'Cleanup'
       sh 'rm node_modules -rf'
-      mail body: 'project build successful'
+      mail (to: 'mihir.gandhi@infostretch.com',
                 subject: 'Project Build Successful',
-                to: 'mihir.gandhi@infostretch.com'
+                body: 'project build successful');             
 }
