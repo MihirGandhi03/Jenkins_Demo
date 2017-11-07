@@ -5,10 +5,10 @@ node('master'){
     def nodeHome = tool 'NodeJS1.2.4'
     bat "\"${nodeHome}\"\\node.exe -v"
     bat "\"${nodeHome}\"\\npm -v"
-    bat "\"${nodeHome}\"\\npm install"
+    bat "\"${nodeHome}\"\\npm install --scripts-prepend-node-path"
   stage 'Cleanup'
     bat "\"${nodeHome}\"\\rm node_modules -rf"
-    mail (to: 'mihir.gandhi@infostretch.com',
+    mail (to: 'mihirgandhi03@yahoo.com',
                 subject: 'Project Build Successful',
                 body: 'project build successful');             
 }
