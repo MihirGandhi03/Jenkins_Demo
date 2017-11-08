@@ -7,9 +7,15 @@ node('master'){
     bat "\"${nodeHome}\"\\node.exe -v"
     bat "\"${nodeHome}\"\\npm -v"
     bat "\"${nodeHome}\"\\npm install --scripts-prepend-node-path"
+    bat "\"${nodeHome}\"\\npm install -g firebase-tools"
  stage 'Build' 
     //bat 'npm run clean'
     bat 'npm run build'
+  stage 'Deploy'
+    script:
+      echo ${FIREBASE_DEPLOY_KEY}
+        grunt all
+        firebase deploy — token ${FIREBASE_DEPLOY_KEY}
   stage 'Cleanup'
     //bat "rd node_modules /s /q"
     //mail (to: 'mihirgandhi03@yahoo.com',
