@@ -8,7 +8,7 @@ node('master'){
     bat "\"${nodeHome}\"\\node.exe -v"
     bat "\"${nodeHome}\"\\npm -v"
     bat "\"${nodeHome}\"\\npm install --scripts-prepend-node-path"
-    bat "\"${nodeHome}\"\\npm install -g firebase-tools"
+    bat "npm install -g firebase-tools"
   }
   stage 'Build' {
     //bat 'npm run clean'
