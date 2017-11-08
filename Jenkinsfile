@@ -16,10 +16,10 @@ node('master'){
   }
   stage 'Deploy' {
     echo "${FIREBASE_DEPLOY_KEY}"
-    only:
-      -master
-    script:
-        -firebase deploy — token "${FIREBASE_DEPLOY_KEY}"
+    only
+      (master)
+    script
+         (firebase deploy — token "${FIREBASE_DEPLOY_KEY}");
   }
   stage 'Cleanup' {
     //bat "rd node_modules /s /q"
