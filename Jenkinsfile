@@ -21,6 +21,6 @@ node('master'){
           <p> This is sample application </p>
           </body>
           </html>
-          ''', subject: 'Sample Extended Email', to: 'mihirgandhi03@yahoo.com');
+          ''', subject: '${PROJECT_NAME} - Build # ${BUILD_NUMBER} - ${BUILD_STATUS}!', to: 'mihirgandhi03@yahoo.com');
 
 }
