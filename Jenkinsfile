@@ -2,6 +2,7 @@ node('master'){
    stage 'Checkout'
 	    checkout scm
   stage 'Test'
+    echo "${Environemnt}"
     def nodeHome = tool 'NodeJS1.2.4'
     bat "\"${nodeHome}\"\\node.exe -v"
     bat "\"${nodeHome}\"\\npm -v"
