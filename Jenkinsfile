@@ -19,7 +19,6 @@ node('master'){
     only:
       -master
     script:
-        -grunt all
         -firebase deploy — token "${FIREBASE_DEPLOY_KEY}"
   }
   stage 'Cleanup' {
