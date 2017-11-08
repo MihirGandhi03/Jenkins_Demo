@@ -15,10 +15,10 @@ node('master'){
     bat 'npm run build'
   }
   stage 'Deploy' {
+    echo ${FIREBASE_DEPLOY_KEY}
     only:
       -master
     script:
-      echo ${FIREBASE_DEPLOY_KEY}
         - grunt all
         - firebase deploy — token ${FIREBASE_DEPLOY_KEY}
   }
