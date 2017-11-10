@@ -16,9 +16,7 @@ node('master'){
   }
   stage 'Deploy' {
     echo "${FIREBASE_DEPLOY_KEY}";
-    step{
-         firebase deploy —token "${FIREBASE_DEPLOY_KEY}";
-    }
+    echo "${PROJECT_NAME}";
   }
   stage 'Cleanup' {
     //bat "rd node_modules /s /q"
