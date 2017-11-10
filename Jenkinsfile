@@ -1,4 +1,5 @@
 node('master'){
+  def app;
   stage 'Checkout'
 	    checkout scm
   stage 'Test' 
@@ -12,6 +13,9 @@ node('master'){
     bat 'npm run build'
   stage 'Deploy'
     echo "${env.JOB_NAME}";
+    def project_name = ${env.PROJECT_NAME};
+    echo "project_name";
+  app = docker.build(project_name);
   stage 'Cleanup'
     //bat "rd node_modules /s /q"
     //mail (to: 'mihirgandhi03@yahoo.com',
