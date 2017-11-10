@@ -7,15 +7,15 @@ node('master'){
     def nodeHome = tool 'NodeJS1.2.4'
     bat "\"${nodeHome}\"\\node.exe -v"
     bat "\"${nodeHome}\"\\npm -v"
-    bat "\"${nodeHome}\"\\npm install --scripts-prepend-node-path"
+    //bat "\"${nodeHome}\"\\npm install --scripts-prepend-node-path"
   stage 'Build'
     //bat 'npm run clean'
-    bat 'npm run build'
+    //bat 'npm run build'
   stage 'Deploy'
     echo "${env.JOB_NAME}";
     def project_name = "${env.PROJECT_NAME}";
     echo "project_name";
-  app = docker.build(project_name);
+  app = docker run project_name;
   stage 'Cleanup'
     //bat "rd node_modules /s /q"
     //mail (to: 'mihirgandhi03@yahoo.com',
