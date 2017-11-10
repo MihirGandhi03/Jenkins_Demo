@@ -11,7 +11,7 @@ node('master'){
     //bat 'npm run clean'
     bat 'npm run build'
   stage 'Deploy'
-    echo "${PROJECT_NAME}";
+    echo "${env.PROJECT_NAME}";
   stage 'Cleanup'
     //bat "rd node_modules /s /q"
     //mail (to: 'mihirgandhi03@yahoo.com',
