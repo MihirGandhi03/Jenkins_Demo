@@ -11,7 +11,6 @@ node('master'){
     //bat 'npm run clean'
     bat 'npm run build'
   stage 'Deploy'
-    echo "${FIREBASE_DEPLOY_KEY}";
     echo "${PROJECT_NAME}";
   stage 'Cleanup'
     //bat "rd node_modules /s /q"
