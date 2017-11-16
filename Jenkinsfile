@@ -8,11 +8,12 @@ node('master'){
     bat "\"${nodeHome}\"\\node.exe -v"
     bat "\"${nodeHome}\"\\npm -v"
     //bat "\"${nodeHome}\"\\npm install --scripts-prepend-node-path"
+  agent { dockerfile true }
   stage 'Build'
     //bat 'npm run clean'
     //bat 'npm run build'
-    def dockerTool = tool 'docker'
-    echo "${dockerTool}";
+    //def dockerTool = tool 'docker'
+    //echo "${dockerTool}";
     //app =docker.build("Jenkins_Docker_Image");
   stage 'Deploy'
   
