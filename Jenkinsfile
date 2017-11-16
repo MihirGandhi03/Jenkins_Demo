@@ -11,9 +11,9 @@ node('master'){
   stage 'Build'
     //bat 'npm run clean'
     //bat 'npm run build'
-    def dockerTool = tool 'docker'
-    echo "${dockerTool}";
-    app =docker.build("Jenkins_Docker_Image");
+    docker.image("Jenkins_Docker_Image").inside{
+      echo "Hello Docker";
+    }
   stage 'Deploy'
   
   stage 'Cleanup'
