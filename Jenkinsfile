@@ -11,7 +11,7 @@ node('master'){
   stage 'Build'
     //bat 'npm run clean'
     //bat 'npm run build'
-    docker.image("Jenkins_Docker_Image").inside{
+    docker.image("ubuntu-test:latest").inside{
       echo "Hello Docker";
     }
   stage 'Deploy'
