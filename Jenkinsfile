@@ -8,7 +8,6 @@ node('master'){
     bat "\"${nodeHome}\"\\node.exe -v"
     bat "\"${nodeHome}\"\\npm -v"
     //bat "\"${nodeHome}\"\\npm install --scripts-prepend-node-path"
-  agent { dockerfile true }
   stage 'Build'
     //bat 'npm run clean'
     //bat 'npm run build'
