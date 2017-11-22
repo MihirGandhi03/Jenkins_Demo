@@ -9,7 +9,7 @@ import { HttpModule } from '@angular/http';
 import { TodosComponent } from './todos/todos.component';
 import { TodoComponent } from './todo/todo.component';
 import { TodosService } from './todos/todos.service';
-import {APP_BASE_HREF} from '@angular/common';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { routing, appRoutingProviders } from './app.routing';
 
@@ -27,7 +27,7 @@ describe('App: Angular2EndToEnd', () => {
         HttpModule,
         routing
       ],
-      providers: [appRoutingProviders, TodosService, {provide: APP_BASE_HREF, useValue : '/' }],
+      providers: [appRoutingProviders, TodosService, { provide: APP_BASE_HREF, useValue: '/' }],
     });
   });
 
